@@ -11,8 +11,7 @@ class UsersController < ApplicationController
         render json: users, status: :ok
     end
 
-    # GET /users/:id
-    # /me
+    # GET /me
     def show
         user = User.find_by(session[:user_id])
         if user
@@ -22,8 +21,7 @@ class UsersController < ApplicationController
         end
     end
 
-    # POST /users
-    # /signup
+    # POST /signup
     def create
         user = User.create(user_params)
         # Save user in session's hash
