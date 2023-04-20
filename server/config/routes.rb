@@ -14,12 +14,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   # PROFILE
-  resources :profiles, only: [:index, :show, :create, :update, :destroy]
+  resources :profiles
 
-  get "latest", to: "profiles#latest"
 
   # ARTICLES
-  resources :articles, only: [:index, :show, :create, :update, :destroy]
+  resources :articles
 
   # Likes
   patch "/articles/:id/likes", to: "articles#like"
