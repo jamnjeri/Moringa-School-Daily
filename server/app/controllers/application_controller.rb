@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    
     # Enable sessions
     include ActionController::Cookies
 
