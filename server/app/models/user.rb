@@ -2,6 +2,11 @@ class User < ApplicationRecord
     # roles
     enum role: [:technicalwriter, :moderator, :admin]
 
+    # Method to allow easy access of a user's role
+    def role
+        User.roles.key(self[:roles])
+    end
+
     # Helper method to encrypt password
     has_secure_password
 
