@@ -15,9 +15,9 @@ class Article < ApplicationRecord
 
 
   # Helper methods
-  def image_url
-    Rails.application.routes.url_helpers.url_for(image) if image.attached?
-  end
+  # def image_url
+  #   Rails.application.routes.url_helpers.url_for(image) if image.attached?
+  # end
 
   def likes
     self[:likes] || 0
@@ -26,5 +26,5 @@ class Article < ApplicationRecord
   def dislikes
     self[:dislikes] || 0
   end
-  
+
 end
