@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # SUBSCRIPTIONS
+  resources :subscriptions ,only: [:create, :index, :destroy]
+  
+  #CATEGORIES
+  resources :categories ,only: [:index, :create, :destroy]
 
   # USERS
   resources :users, only: [:index, :update, :destroy]
