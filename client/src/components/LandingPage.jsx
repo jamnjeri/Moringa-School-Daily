@@ -2,13 +2,16 @@ import React from 'react';
 import Logo from '../assets/logo.png';
 import Typed from 'react-typed';
 import Newsletter from '../assets/newsletter.png';
+import { Link } from 'react-router-dom';
+import '../index.css';
+
 
 
 const LandingPage = () => {
 
   return (
     <>
-      {/* Navbar */}
+      
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white '>
       <img src={Logo} alt='logo' className='object-left'/>
     
@@ -42,7 +45,7 @@ const LandingPage = () => {
           />
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>A place where coders share, stay up-to-date and grow their careers. </p>
-        <button className='bg-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</button>
+        <Link className='bg-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black' to='signup'>Get Started</Link>
         {/* Redirect button -> change to link -> Signup screen*/}
       </div>
      </div>
