@@ -1,7 +1,4 @@
 class User < ApplicationRecord
-
-    has_many :categories, through: :subscriptions
-    has_many :subscriptions    
     # roles
     enum role: [:technicalwriter, :moderator, :admin]
 
