@@ -1,0 +1,3 @@
+server/log/development.log
+server/tmp/cache/bootsnap/load-path-cache
+server/db/msdaily-test.sqlite3
