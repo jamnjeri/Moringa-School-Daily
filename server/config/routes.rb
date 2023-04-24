@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   #CATEGORIES
   resources :categories ,only: [:index, :create, :destroy]
 
+  #ARTICLE CATEGORIES
+  resources :article_categories ,only: [:create]
+
   # USERS
   resources :users, only: [:index, :update, :destroy]
 
