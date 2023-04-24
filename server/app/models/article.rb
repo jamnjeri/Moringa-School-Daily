@@ -14,11 +14,6 @@ class Article < ApplicationRecord
   validates :body, presence: true
 
 
-  # Helper methods
-  # def image_url
-  #   Rails.application.routes.url_helpers.url_for(image) if image.attached?
-  # end
-
   def likes
     self[:likes] || 0
   end

@@ -1,8 +1,15 @@
 require "active_support/core_ext/integer/time"
 
-Rails.application.routes.default_url_options = {
-  host: 'http://localhost:3000'
-}
+hosts = {
+  development: 'http://localhost:3000',
+  production: 'https://ms-daily.onrender.com'
+}.freeze
+
+# Rails.application.routes.default_url_options = {
+#   host: 'http://localhost:3000'
+# }
+
+Rails.application.routes.default_url_options[:host] = hosts[Rails.env.to_sym]
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
