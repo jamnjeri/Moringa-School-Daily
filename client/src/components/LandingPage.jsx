@@ -17,9 +17,15 @@ const LandingPage = () => {
     
         <h1 className='w-full text-3xl font-bold text-[#F9500D]'>MORINGA.</h1>
         <ul className='md:flex'>
-          <li className='p-4'>Home</li>
-          <li className='p-4'>Login</li>
-          <li className='p-4'>Register</li>
+          <li className='p-4'> 
+         <Link to="/login"> Home</Link>
+          </li>
+          <li className='p-4'>
+            <Link to='/login'>Login </Link>
+            </li>
+          <li className='p-4'>
+            <Link to='/signup'>Register</Link>
+            </li>
         </ul>
       </div>
 

@@ -23,7 +23,7 @@ const CreateCategories = () => {
                                             <img
                                                 class="mx-auto w-52"
                                                 src="https://moringaschool.com/wp-content/themes/moringa/public/images/logo.png"
-                                                alt="logo" />
+                                                alt="school logo" />
                                             
                                         </div>
 
