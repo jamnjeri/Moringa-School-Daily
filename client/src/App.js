@@ -2,24 +2,26 @@
 import './App.css';
 import SideNavbarAdmin from './components/admin/sideNavbarAdmin';
 import Login from './components/login';
+import ResetPassword from './components/reset';
 import SignUp from './components/signup';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CreateCategories from './components/admin/createCategories';
 
 function App() {
   return (
-    <div>
-      {/* <Routes> */}
-        <Login/>
-        <SignUp/>
-        <SideNavbarAdmin/>
-        {/* <Route path="/" element={Home}></Route> */}
-        {/* <Route path="/Login" element={Login}></Route>
-        <Route path="/SignUp" element={SignUp}></Route>
-        <Route path="/SideNavbarAdmin" element={SideNavbarAdmin}></Route> */}
-     
-      {/* </Routes> */}
+    <BrowserRouter>
+      <Login/>
+      <Routes>
+        
+        {/* <Route path="/" element={Login}></Route> */}
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/signup" element={<SignUp/>}></Route>
+        <Route path="/reset" element={<ResetPassword/>}></Route>
+        <Route path="/sideNavbarAdmin" element={<SideNavbarAdmin/>}></Route>
+        <Route path="/createCategories" element={<CreateCategories/>}></Route>
+      </Routes>
       
-    </div>
+    </BrowserRouter>
   );
 }
 
