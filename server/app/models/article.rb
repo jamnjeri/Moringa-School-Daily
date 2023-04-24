@@ -27,4 +27,6 @@ class Article < ApplicationRecord
     self[:dislikes] || 0
   end
 
+  scope :new_articles_for_category, ->(category_id) { where(category_id: category_id, created_at: Time.current - 1.day..Time.current) }
+
 end

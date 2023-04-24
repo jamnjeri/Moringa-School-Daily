@@ -9,3 +9,7 @@ class CreateProfiles < ActiveRecord::Migration[7.0]
     end
   end
 end
+
+
+
+email = UserMailer.new_post_notification(user, post).deliver_now

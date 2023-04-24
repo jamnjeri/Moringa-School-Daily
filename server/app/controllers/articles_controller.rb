@@ -30,6 +30,10 @@ class ArticlesController < ApplicationController
         else
             render json: { error: 'You need to be logged in to post an article '}, status: :unauthorized
         end
+
+        User.all.each do |user|
+            user.send_new_article_notifications if user.categories.include?(article.category)
+        end
     end
 
     # PATCH /articles/:id  (If logged in)
@@ -99,7 +103,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :body, :user_id, :image)
+        params.require(:article).permit(:title, :body, :user_id, :image, :category_id)
     end
 
     def render_not_found_response
