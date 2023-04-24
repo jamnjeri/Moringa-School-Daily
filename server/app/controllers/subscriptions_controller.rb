@@ -1,6 +1,6 @@
-class SubscrpitionsController < ApplicationController
+class SubscriptionsController < ApplicationController
 
-    # POST /subscription Subscribe to article categories
+    # POST /subscriptions Subscribe to article categories
   
     def create
         current_user = User.find_by(session[:user_id])
