@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   # Dislikes
   patch "/articles/:id/dislikes", to: "articles#dislike"
 
+  # COMMENTS
+  resources :comments
+
 end

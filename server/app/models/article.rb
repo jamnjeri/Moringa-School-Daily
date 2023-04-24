@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   # Relationships
   belongs_to :user
+  has_many :comments
 
   # ActiveStorage relationship
   has_one_attached :image

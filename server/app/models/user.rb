@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+    #Relationships
+    has_one :profile
+    has_many :articles
+    has_many :comments
+
     # roles
     enum role: [:technicalwriter, :moderator, :admin]
 
@@ -9,6 +14,7 @@ class User < ApplicationRecord
 
     # Helper method to encrypt password
     has_secure_password
+
 
     # Validations
     validates :email, presence: true, uniqueness: true
