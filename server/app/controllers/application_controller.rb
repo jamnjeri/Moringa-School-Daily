@@ -4,12 +4,18 @@ class ApplicationController < ActionController::Base
     include ActionController::Cookies
 
     # make available
-    helper_method :current_user, :image_url
+    helper_method :current_user, :ensure_current_user, :image_url
 
-    private
+    def ensure_current_user
+        if current_user.nil?
+          redirect_to "/"
+        end
+    end
 
     def current_user
-        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+        if session[:user_id]
+            @current_user ||= User.find_by(id: session[:user_id])
+        end
     end
 
     def image_url

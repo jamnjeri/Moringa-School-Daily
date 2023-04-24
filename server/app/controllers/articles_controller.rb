@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
     # Handle ActiveRecord Unprocessable Entity - raised when a record fails to save or validate in the database.
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
+    before_action :ensure_current_user, only: [:create, :update, :destroy, :like, :dislike]
+
     # GET /articles
     def index
         articles = Article.all
@@ -13,19 +15,18 @@ class ArticlesController < ApplicationController
 
     # GET /articles/:id
     def show
-        article = Article.find(params[:id])
+        article = find_article
         render json: ArticleSerializer.new(article).serializable_hash[:data][:attributes], status: :ok
     end
 
     # POST /articles (If logged in)
     def create
-        current_user = User.find_by(session[:user_id])
         if current_user
-            article = Article.new(article_params)
+            article = current_user.articles.new(article_params)
             if article.save
-                render article, status: :created, location: article
+                render json: article, status: :created, location: article
             else
-                render json: article.errors.full_messages, status: :unprocessable_entity
+                    render json: article.errors.full_messages, status: :unprocessable_entity
             end
         else
             render json: { error: 'You need to be logged in to post an article '}, status: :unauthorized
@@ -35,7 +36,6 @@ class ArticlesController < ApplicationController
     # PATCH /articles/:id  (If logged in)
     def update
         article = find_article
-        current_user = User.find_by(session[:user_id])
         if current_user && (current_user == article.user || current_user.role == "admin")
             if article.update(article_params)
                 render json: article, status: :accepted
@@ -50,7 +50,6 @@ class ArticlesController < ApplicationController
 
     # DELETE /articles/:id (Article owner or admin)
     def destroy
-        current_user = User.find_by(id: session[:user_id])
         article = find_article
         if current_user && (current_user == article.user || current_user.role == "admin")
             article.destroy
@@ -62,14 +61,13 @@ class ArticlesController < ApplicationController
 
     # Like
     def like
-        current_user = User.find_by(session[:user_id])
         article = find_article
         if current_user
-            @article.likes += 1
+            article.likes += 1
             if @article.save
-                render json: @article
+                render json: article, status: :ok
             else
-                render json: @article.errors, status: :unprocessable_entity
+                render json: article.errors, status: :unprocessable_entity
             end
         else
             render json: { error: 'Kindly log in to contribute'}, status: :unauthorized
@@ -78,12 +76,11 @@ class ArticlesController < ApplicationController
 
     # Dislike
     def dislike
-        current_user = User.find_by(session[:user_id])
         article = find_article
         if current_user
-            @article.dislikes += 1
+            article.dislikes += 1
             if @article.save
-                render json: @article
+                render json: @article, status: :ok
             else
                 render json: @article.errors, status: :unprocessable_entity
             end
@@ -99,7 +96,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :body, :user_id, :image)
+        params.require(:article).permit(:title, :body, :image)
     end
 
     def render_not_found_response
