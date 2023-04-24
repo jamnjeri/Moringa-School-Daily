@@ -186,10 +186,12 @@ const SideNavbarAdmin = () => {
                             </div>
                         </div>
                     </div>
+                    <Articles />
                 </div>
-            </div>
+                           </div>
+            
             <div>
-                <Articles />
+                
             </div>
           
         </div>
