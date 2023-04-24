@@ -3,7 +3,7 @@ class User < ApplicationRecord
     enum role: [:technicalwriter, :moderator, :admin]
 
     # Method to allow easy access of a user's role
-    def role
+    def user_type
         User.roles.key(self[:roles])
     end
 
