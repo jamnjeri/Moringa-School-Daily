@@ -4,7 +4,7 @@ import ResetPassword from "./components/reset";
 import SignUp from "./components/signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateCategories from "./components/admin/createCategories";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/landingPage";
 
 function App() {
   return (
