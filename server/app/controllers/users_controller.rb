@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         end
     end
 
+
     # POST /signup
     def create
         user = User.create(user_params)
@@ -33,6 +34,8 @@ class UsersController < ApplicationController
         end
 
     end
+
+    #POST register_user
 
     # PATCH /users/:id
     def update

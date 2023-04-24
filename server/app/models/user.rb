@@ -1,9 +1,12 @@
 class User < ApplicationRecord
+
+    has_many :categories, through: :subscriptions
+    has_many :subscriptions    
     # roles
     enum role: [:technicalwriter, :moderator, :admin]
 
     # Method to allow easy access of a user's role
-    def role
+    def user_type
         User.roles.key(self[:roles])
     end
 

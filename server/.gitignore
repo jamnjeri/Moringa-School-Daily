@@ -1,4 +1,4 @@
 .env
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+ Ignore all logfiles and tempfiles.
+ /log/*.log
+ /tmp
