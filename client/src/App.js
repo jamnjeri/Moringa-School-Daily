@@ -8,6 +8,7 @@ import LandingPage from "./components/landingPage";
 import UserList from "./components/admin/userList";
 import AdminLogin from "./components/admin/adminLogin";
 import ModeratorLogin from "./components/moderator/moderatorLogin";
+import RoleLogin from "./components/roleLogin";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/createCategories" element={<CreateCategories />}></Route>
         <Route path="/userList" element={<UserList />}></Route>
         <Route path="/adminLogin" element={<AdminLogin />}></Route>
-        <Route path="/sideNavbarMode" element={<ModeratorLogin />}></Route>
+        <Route path="/moderatorLogin" element={<ModeratorLogin />}></Route>
+        <Route path="/roleLogin" element={<RoleLogin />}></Route>
       </Routes>
     </BrowserRouter>
   );

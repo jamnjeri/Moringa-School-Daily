@@ -75,7 +75,7 @@ const Login = () => {
                     </div>
 
                     <form onSubmit={handleSubmit}>
-                      <p class="mb-4">Please login to your account</p>
+                      <p class="mb-12 mt-1 pb-1 ml-11 text-xl font-semibold">Please login to your account</p>
                       {/* <!--Username input--> */}
                       <br />
                       {error && <div className="error">{error}</div>}
