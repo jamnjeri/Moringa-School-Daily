@@ -5,6 +5,9 @@ import SignUp from "./components/signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateCategories from "./components/admin/createCategories";
 import LandingPage from "./components/landingPage";
+import UserList from "./components/admin/userList";
+import AdminLogin from "./components/admin/adminLogin";
+import ModeratorLogin from "./components/moderator/moderatorLogin";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/reset" element={<ResetPassword />}></Route>
         <Route path="/sideNavbarAdmin" element={<SideNavbarAdmin />}></Route>
         <Route path="/createCategories" element={<CreateCategories />}></Route>
+        <Route path="/userList" element={<UserList />}></Route>
+        <Route path="/adminLogin" element={<AdminLogin />}></Route>
+        <Route path="/sideNavbarMode" element={<ModeratorLogin />}></Route>
       </Routes>
     </BrowserRouter>
   );

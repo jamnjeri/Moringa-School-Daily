@@ -21,7 +21,7 @@ const LandingPage = () => {
          <Link to="/login"> Home</Link>
           </li>
           <li className='p-4'>
-            <Link to='/login'>Sign In </Link>
+            <Link to='/login'>Login</Link>
             </li>
           <li className='p-4'>
             <Link to='/signup'>Register</Link>
@@ -64,12 +64,9 @@ const LandingPage = () => {
           <p className='text-[#F9500D] font-bold '>DATA ANALYTICS </p>
           <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>How To Manage Data Analytics Centrally</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            molestiae delectus culpa hic assumenda, voluptate reprehenderit
-            dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
-            eveniet ex deserunt fuga?
+          Data analytics draws from a range of disciplines — including computer programming, mathematics, and statistics — to perform analysis on data in an effort to describe, predict, and improve performance. To ensure robust analysis, data analytics teams leverage a range of data management techniques, including data mining, data cleansing, data transformation, data modeling, and more.
           </p>
-          <button className='bg-black text-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Continue Reading</button>
+          <Link to='/login' className='bg-black text-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Continue Reading</Link>
         </div>
       </div>
      </div>

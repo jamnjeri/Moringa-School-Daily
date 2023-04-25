@@ -105,8 +105,8 @@ const SideNavbarAdmin = () => {
                                     </Link>
                                 </li>
                                 <li className="rounded-sm">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/userList"
                                         className="flex items-center p-2 space-x-3 rounded-md"
                                     >
                                         <svg
@@ -125,7 +125,7 @@ const SideNavbarAdmin = () => {
                                         </svg>
 
                                         <span className="text-gray-100">Users</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="rounded-sm">
                                     <a
@@ -162,43 +162,43 @@ const SideNavbarAdmin = () => {
                 <div className="container mx-4 mt-4 bg-neutral-200 dark:bg-neutral-700">
                     <div className="grid grid-cols-1 gap-3 mb-3 lg:grid-cols-3"
                     >
-                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow" 
+                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow"
                         >
                             <div className="text-sm font-medium text-gray-500 truncate"
-                             style={{
-                                background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
-                              }}>
-                                                                Published Articles                            
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
+                                Published Articles
                             </div>
                             <div className="mt-1 text-3xl font-semibold text-gray-900">
-                            <Link to="/">
-                                Published
-                               </Link>
-                            </div>
-                        </div>
-                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
-                            <div className="text-sm font-medium text-gray-500 truncate"
-                             style={{
-                                background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
-                              }}>
-                                New Articles
-                            </div>
-                            <div className="mt-1 text-3xl font-semibold text-gray-900">
-                                <Link>
-                                Pending Articles
+                                <Link to="/">
+                                    Published
                                 </Link>
                             </div>
                         </div>
                         <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
                             <div className="text-sm font-medium text-gray-500 truncate"
-                             style={{
-                                background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
-                              }}>
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
+                                New Articles
+                            </div>
+                            <div className="mt-1 text-3xl font-semibold text-gray-900">
+                                <Link>
+                                    Pending Articles
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+                            <div className="text-sm font-medium text-gray-500 truncate"
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
                                 Rejected Articles
                             </div>
                             <div className="mt-1 text-3xl font-semibold text-gray-900">
                                 <Link>
-                                Rejected
+                                    Rejected
                                 </Link>
                             </div>
                         </div>
