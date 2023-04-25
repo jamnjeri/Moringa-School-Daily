@@ -23,7 +23,7 @@ const ModeratorLogin = () => {
     setError(null);
 
     // Perform login request
-    fetch('/login', {
+    fetch('https://ms-daily.onrender.com/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
