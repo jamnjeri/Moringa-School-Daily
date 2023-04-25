@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../assets/logo.png';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Newsletter from '../assets/newsletter.png';
 import { Link } from 'react-router-dom';
 
@@ -43,13 +43,13 @@ const LandingPage = () => {
             <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
               Find Articles on
             </p>
-            <Typed
+            {/* <Typed
               className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
               strings={['Frontend', 'Backend', 'DevOps', 'Fullstack', 'UI/UX', 'Data Science', 'Machine Learning', 'Cloud Computing', 'Cyber Security']}
               typeSpeed={100}
               backSpeed={80}
               loop
-            />
+            /> */}
           </div>
           <p className='md:text-2xl text-xl font-bold text-gray-500'>A place where coders share, stay up-to-date and grow their careers. </p>
           <Link className='bg-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black' to='signup'>Get Started</Link>
