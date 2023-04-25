@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-
+    # Relationships
+    has_one :profile
+    has_many :articles
+    has_many :comments
     has_many :categories, through: :subscriptions
     has_many :subscriptions    
     # roles
