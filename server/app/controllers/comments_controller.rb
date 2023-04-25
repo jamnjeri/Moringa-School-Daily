@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-        params.require(:comment).permit(:content, :article_id, :user_id)
+        params.permit(:content, :article_id, :user_id)
     end
 
     def render_not_found_response
