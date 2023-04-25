@@ -1,7 +1,6 @@
 import React from 'react';
 import Logo from '../assets/logo.png';
 
-import { useTrail, animated } from 'react-spring'
 import Newsletter from '../assets/newsletter.png';
 import { Link } from 'react-router-dom';
 
@@ -10,16 +9,7 @@ import '../index.css';
 
 const LandingPage = () => {
 
-  const items = ['Frontend', 'Backend', 'DevOps', 'Fullstack', 'UI/UX', 'Data Science', 'Machine Learning', 'Cloud Computing', 'Cyber Security']
-
-  const config = { mass: 5, tension: 2000, friction: 200 }
-
-  const trail = useTrail(items.length, {
-    config,
-    opacity: 1,
-    x: 0,
-    from: { opacity: 0, x: 20 }
-  })
+ 
 
   return (
     <>
@@ -51,17 +41,11 @@ const LandingPage = () => {
             Grow with other devs.
           </h1>
           <div className='flex justify-center items-center'>
-            <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
+            {/* <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
               Find Articles on
-            </p>
+            </p> */}
 
-            <div className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'>
-              {trail.map((props, index) => (
-                <animated.span key={items[index]} style={props}>
-                  {items[index]}
-                </animated.span>
-              ))}
-            </div>
+           
             
           </div>
           <p className='md:text-2xl text-xl font-bold text-gray-500'>A place where coders share, stay up-to-date and grow their careers. </p>
