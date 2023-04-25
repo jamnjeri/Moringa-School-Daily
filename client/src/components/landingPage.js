@@ -9,10 +9,10 @@ import '../index.css';
 
 const LandingPage = () => {
 
- 
+
 
   return (
-    <>
+    <div className='bg-[#101f3c]'>
 
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white '>
         <img src={Logo} alt='logo' className='object-left' />
@@ -41,12 +41,16 @@ const LandingPage = () => {
             Grow with other devs.
           </h1>
           <div className='flex justify-center items-center'>
-            {/* <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
-              Find Articles on
-            </p> */}
+          
+            <div className="relative h-[98%] flex items-center w-full justify-end pr-40 bg-[url(https://mcdn.wallpapersafari.com/medium/36/71/6IYbTr.jpg)] bg-cover">
+              <video autoPlay muted loop className="h-5/6 opacity-90">
+                <source
+                  src="https://videos.ctfassets.net/5ltrds677kah/4egYmxaUbJ9lFo6eUwe3kc/b5634a0710986b2c34743931c8a2d68e/blog_to_video.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
 
-           
-            
           </div>
           <p className='md:text-2xl text-xl font-bold text-gray-500'>A place where coders share, stay up-to-date and grow their careers. </p>
           <Link className='bg-[#F9500D] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black' to='signup'>Get Started</Link>
@@ -100,7 +104,7 @@ const LandingPage = () => {
       </div>
 
 
-    </>
+    </div>
   )
 }
 

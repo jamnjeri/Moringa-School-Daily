@@ -28,6 +28,8 @@ export default function Articles() {
                         </div>
                     </div>
                 </div>
+
+                
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure>
                         <img src="https://fatstacksblog.com/wp-content/uploads/2019/11/Person-writing-article-nov26.jpg" alt="placeholder" />

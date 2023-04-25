@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 export default function RoleLogin() {
 
     return (
-        <section class="mt-11 bg-neutral-200">
+        <section class="mt-11 bg-neutral-200 ">
 
 
-                <div className="grid grid-cols-1 gap-1 mb-1 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-1 items-center mb-1 lg:grid-cols-3">
                 
 
                         <div className="card w-96 bg-base-100 shadow-xl ml-11">
