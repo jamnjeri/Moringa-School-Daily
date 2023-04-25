@@ -1,6 +1,9 @@
 # USERS
 user1 = User.create(username: 'jamnjeri', email: 'jamnjeri@gmail.com', password: 'jamnjeri@123', role: 2)
-user1 = User.create(username: 'kahingaK', email: 'ikahinga@gmail.com', password: 'password', role: 2)
+user2 = User.create(username: 'kahingaK', email: 'ikahinga@gmail.com', password: 'password', role: 2)
+user3 = User.create(username: 'hawa', email: 'hawachege@gmail.com', password: 'password', role: 1)
+user4 = User.create(username: 'daisy', email: 'idaisya@gmail.com', password: 'password', role: 0)
+
 cat1 = Category.create!(
   name: "Data science",
   description: " includes technologies that involve the extraction, analysis, and interpretation of data to gain insights and inform decision-making, such as data mining, machine learning, statistical modeling, and big data analytics."
@@ -39,13 +42,13 @@ cat9 = Category.create!(
 )
 
 
-  10.times do
-    User.create!(
-      username: Faker::Name.name,
-      email: Faker::Internet.email,
-      password: 'password', # Set password directly to 'password'
-      role: 0
-    )
-  end
+  # 10.times do
+  #   User.create!(
+  #     username: Faker::Name.name,
+  #     email: Faker::Internet.email,
+  #     password: 'password', # Set password directly to 'password'
+  #     role: 0
+  #   )
+  # end
 
 
