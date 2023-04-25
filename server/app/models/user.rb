@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
     has_many :categories, through: :subscriptions
     has_many :subscriptions    
+    has_many :articless, through: :articles_categories, source: :article
     # roles
     enum role: [:technicalwriter, :moderator, :admin]
 
@@ -24,11 +25,13 @@ class User < ApplicationRecord
         
     def send_new_article_notifications
         new_article = []
-        categories.each do |category|
-          new_article += Article.new_articles_for_category(category.id)
+        Articlecategory.each do |article_category|
+          if categories.include?(article_category.category)
+            new_article += Article.new_articles_for_category(article_category.category.id)
+          end
         end
     
-        new_posts.each do |post|
+        new_articles.each do |article|
           UserMailer.new_article_notification(self, article).deliver_now
         end
     end

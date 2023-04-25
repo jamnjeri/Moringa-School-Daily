@@ -968,3 +968,1136 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(417712206474398955)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jamnjeri@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jamnjeri"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "jamnjeri"], ["email", "jamnjeri@gmail.com"], ["password_digest", "[FILTERED]"], ["role", 2], ["created_at", "2023-04-25 08:27:54.618382"], ["updated_at", "2023-04-25 08:27:54.618382"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ikahinga@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "kahingaK"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kahingaK"], ["email", "ikahinga@gmail.com"], ["password_digest", "[FILTERED]"], ["role", 2], ["created_at", "2023-04-25 08:27:54.893694"], ["updated_at", "2023-04-25 08:27:54.893694"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (2.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Data science"], ["description", " includes technologies that involve the extraction, analysis, and interpretation of data to gain insights and inform decision-making, such as data mining, machine learning, statistical modeling, and big data analytics."], ["created_at", "2023-04-25 08:27:54.944416"], ["updated_at", "2023-04-25 08:27:54.944416"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Software engineering"], ["description", "includes technologies that involve the design, development, and maintenance of software systems and applications, such as programming languages, software development methodologies, and software testing frameworks."], ["created_at", "2023-04-25 08:27:54.959481"], ["updated_at", "2023-04-25 08:27:54.959481"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Robotics"], ["description", " includes technologies that enable machines to perform tasks that typically require human interaction, such as assembly line work, exploration, and surgery."], ["created_at", "2023-04-25 08:27:54.977161"], ["updated_at", "2023-04-25 08:27:54.977161"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hardware"], ["description", "Includes the physical components of a computer, such as the motherboard, processor, memory, storage devices, and input/output devices."], ["created_at", "2023-04-25 08:27:54.987182"], ["updated_at", "2023-04-25 08:27:54.987182"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Networking"], ["description", "includes technologies that enable computers and other devices to communicate with each other, such as Wi-Fi, Ethernet, Bluetooth, and cellular networks."], ["created_at", "2023-04-25 08:27:54.994408"], ["updated_at", "2023-04-25 08:27:54.994408"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cybersecurity"], ["description", " includes technologies that protect computer systems and data from unauthorized access, such as firewalls, antivirus software, and encryption."], ["created_at", "2023-04-25 08:27:55.001241"], ["updated_at", "2023-04-25 08:27:55.001241"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Artificial intelligence (AI)"], ["description", "Includes technologies that enable computers to perform tasks that typically require human intelligence, such as image and speech recognition, natural language processing, and decision-making."], ["created_at", "2023-04-25 08:27:55.006889"], ["updated_at", "2023-04-25 08:27:55.006889"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cloud computing"], ["description", "Includes technologies that enable users to access computing resources, such as storage, processing power, and applications, over the internet, rather than from a local computer"], ["created_at", "2023-04-25 08:27:55.013874"], ["updated_at", "2023-04-25 08:27:55.013874"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Quantum computing"], ["description", "includes technologies that use quantum-mechanical phenomena to perform calculations and solve problems that are beyond the capabilities of classical computers."], ["created_at", "2023-04-25 08:27:55.020939"], ["updated_at", "2023-04-25 08:27:55.020939"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alden@ernser-hilpert.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Michael Reichel LLD"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Michael Reichel LLD"], ["email", "alden@ernser-hilpert.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:56.924155"], ["updated_at", "2023-04-25 08:27:56.924155"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "micah.torp@ziemann.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Starla Ullrich"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Starla Ullrich"], ["email", "micah.torp@ziemann.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:57.203131"], ["updated_at", "2023-04-25 08:27:57.203131"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "slyvia@lind-pollich.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Dr. Tyree Daniel"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Dr. Tyree Daniel"], ["email", "slyvia@lind-pollich.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:57.485006"], ["updated_at", "2023-04-25 08:27:57.485006"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "werner.batz@ebert.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ida Carter"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ida Carter"], ["email", "werner.batz@ebert.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:57.763559"], ["updated_at", "2023-04-25 08:27:57.763559"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marcelino@kunde-friesen.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Michale Becker"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Michale Becker"], ["email", "marcelino@kunde-friesen.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:58.045630"], ["updated_at", "2023-04-25 08:27:58.045630"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alix_leffler@greenfelder-jakubowski.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Clyde Padberg"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Clyde Padberg"], ["email", "alix_leffler@greenfelder-jakubowski.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:58.326032"], ["updated_at", "2023-04-25 08:27:58.326032"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "douglas@dare.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ming Kilback"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ming Kilback"], ["email", "douglas@dare.test"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:58.611642"], ["updated_at", "2023-04-25 08:27:58.611642"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hal@lubowitz.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Annika Hoeger"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Annika Hoeger"], ["email", "hal@lubowitz.test"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:58.884405"], ["updated_at", "2023-04-25 08:27:58.884405"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sacha.kub@jast.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Loren Rempel"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Loren Rempel"], ["email", "sacha.kub@jast.test"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:59.161658"], ["updated_at", "2023-04-25 08:27:59.161658"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "garland@douglas.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Keenan Fritsch"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Keenan Fritsch"], ["email", "garland@douglas.example"], ["password_digest", "[FILTERED]"], ["role", 0], ["created_at", "2023-04-25 08:27:59.441095"], ["updated_at", "2023-04-25 08:27:59.441095"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Create (2.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "likes", "dislikes", "status", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ruby"], ["body", "Creating Api"], ["likes", 0], ["dislikes", 0], ["status", 0], ["user_id", 1], ["created_at", "2023-04-25 08:32:42.504691"], ["updated_at", "2023-04-25 08:32:42.504691"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Create (6.9ms)[0m  [1m[32mINSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["article_id", 1], ["category_id", 1], ["created_at", "2023-04-25 08:33:33.801386"], ["updated_at", "2023-04-25 08:33:33.801386"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 29.1ms | Allocations: 6257)
+  Rendered layout layouts/mailer.html.erb (Duration: 30.4ms | Allocations: 6500)
+UserMailer#new_article_notification: processed outbound mail in 206.3ms
+Delivered mail 6447908326932_d019d20537ac@emmanuel-HP-EliteBook-840-G3.mail (9279.5ms)
+Date: Tue, 25 Apr 2023 11:34:11 +0300
+From: from@example.com
+To: emmanuel471@gmail.com
+Message-ID: <6447908326932_d019d20537ac@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear emmanuel471@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Ruby</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Create (2.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "likes", "dislikes", "status", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Java"], ["body", "Creating Api"], ["likes", 0], ["dislikes", 0], ["status", 0], ["user_id", 2], ["created_at", "2023-04-25 08:38:35.906906"], ["updated_at", "2023-04-25 08:38:35.906906"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticleCategory Create (2.2ms)[0m  [1m[32mINSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["article_id", 2], ["category_id", 1], ["created_at", "2023-04-25 08:39:09.169904"], ["updated_at", "2023-04-25 08:39:09.169904"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 9.7ms | Allocations: 418)
+  Rendered layout layouts/mailer.html.erb (Duration: 11.1ms | Allocations: 493)
+UserMailer#new_article_notification: processed outbound mail in 23.9ms
+Delivered mail 644791b978332_d019d2053843@emmanuel-HP-EliteBook-840-G3.mail (4255.1ms)
+Date: Tue, 25 Apr 2023 11:39:21 +0300
+From: from@example.com
+To: jamnjeri@gmail.com
+Message-ID: <644791b978332_d019d2053843@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear jamnjeri@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Java</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "likes", "dislikes", "status", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "python"], ["body", "Creating Api"], ["likes", 0], ["dislikes", 0], ["status", 0], ["user_id", 3], ["created_at", "2023-04-25 08:42:52.242584"], ["updated_at", "2023-04-25 08:42:52.242584"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticleCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["article_id", 3], ["category_id", 3], ["created_at", "2023-04-25 08:43:52.916734"], ["updated_at", "2023-04-25 08:43:52.916734"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 2.3ms | Allocations: 418)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.0ms | Allocations: 493)
+UserMailer#new_article_notification: processed outbound mail in 12.1ms
+Delivered mail 644792d221714_d019d20539fa@emmanuel-HP-EliteBook-840-G3.mail (4691.6ms)
+Date: Tue, 25 Apr 2023 11:44:02 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <644792d221714_d019d20539fa@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Robotics category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: python</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mCategory Load (12.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 4.2ms | Allocations: 236)
+  Rendered layout layouts/mailer.html.erb (Duration: 6.1ms | Allocations: 311)
+UserMailer#new_article_notification: processed outbound mail in 31.6ms
+Delivered mail 644794d2b05dd_d019d20540e2@emmanuel-HP-EliteBook-840-G3.mail (5030.7ms)
+Date: Tue, 25 Apr 2023 11:52:34 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <644794d2b05dd_d019d20540e2@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Robotics category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: python</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (4.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 21.8ms | Allocations: 6301)
+  Rendered layout layouts/mailer.html.erb (Duration: 23.9ms | Allocations: 6544)
+UserMailer#new_article_notification: processed outbound mail in 265.2ms
+Delivered mail 644795472c5c6_ddbad20-484@emmanuel-HP-EliteBook-840-G3.mail (3280.1ms)
+Date: Tue, 25 Apr 2023 11:54:31 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <644795472c5c6_ddbad20-484@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Ruby</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (2.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 35.8ms | Allocations: 10071)
+  Rendered layout layouts/mailer.html.erb (Duration: 36.1ms | Allocations: 10145)
+UserMailer#new_article_notification: processed outbound mail in 207.3ms
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 14.4ms | Allocations: 6153)
+  Rendered layout layouts/mailer.html.erb (Duration: 15.6ms | Allocations: 6396)
+UserMailer#new_article_notification: processed outbound mail in 168.7ms
+Delivered mail 64479933cf4d3_e5afd20495a0@emmanuel-HP-EliteBook-840-G3.mail (10025.6ms)
+Date: Tue, 25 Apr 2023 12:11:15 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <64479933cf4d3_e5afd20495a0@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Ruby</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 5.1ms | Allocations: 418)
+  Rendered layout layouts/mailer.html.erb (Duration: 5.7ms | Allocations: 493)
+UserMailer#new_article_notification: processed outbound mail in 14.2ms
+Delivered mail 64479a066b227_e5afd2049691@emmanuel-HP-EliteBook-840-G3.mail (19248.1ms)
+Date: Tue, 25 Apr 2023 12:14:46 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <64479a066b227_e5afd2049691@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Robotics category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: python</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 14.7ms | Allocations: 6153)
+  Rendered layout layouts/mailer.html.erb (Duration: 16.3ms | Allocations: 6396)
+UserMailer#new_article_notification: processed outbound mail in 219.9ms
+Delivered mail 64479e3761960_ebddd20-4f1@emmanuel-HP-EliteBook-840-G3.mail (10024.6ms)
+Date: Tue, 25 Apr 2023 12:32:39 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <64479e3761960_ebddd20-4f1@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Robotics category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: python</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 3.7ms | Allocations: 418)
+  Rendered layout layouts/mailer.html.erb (Duration: 5.2ms | Allocations: 493)
+UserMailer#new_article_notification: processed outbound mail in 19.4ms
+Delivered mail 64479e7894931_ebddd20-336@emmanuel-HP-EliteBook-840-G3.mail (9967.3ms)
+Date: Tue, 25 Apr 2023 12:33:44 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <64479e7894931_ebddd20-336@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Java</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "article_categories"."category_id" = "categories"."id" WHERE "article_categories"."article_id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/new_article_notification.html.erb within layouts/mailer
+  Rendered user_mailer/new_article_notification.html.erb within layouts/mailer (Duration: 3.5ms | Allocations: 418)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.6ms | Allocations: 493)
+UserMailer#new_article_notification: processed outbound mail in 14.5ms
+Delivered mail 6447a24ab3dfa_ebddd20-2b1@emmanuel-HP-EliteBook-840-G3.mail (4799.1ms)
+Date: Tue, 25 Apr 2023 12:50:02 +0300
+From: from@example.com
+To: ikahinga@gmail.com
+Message-ID: <6447a24ab3dfa_ebddd20-2b1@emmanuel-HP-EliteBook-840-G3.mail>
+Subject: New article in Data science category
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article in Category category</h1>
+  <p>Dear ikahinga@gmail.com,</p>
+    <p>A new article has been added to the  Category category</p>
+    <ul>
+      <li>Title: Java</li>
+      <li>Body: Creating Api</li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>
+
+ 
+  </body>
+</html>
+
