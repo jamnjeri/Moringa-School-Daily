@@ -119,6 +119,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_132449) do
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
+  create_table "subscrpitions", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email", null: false
