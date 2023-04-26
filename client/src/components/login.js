@@ -23,7 +23,7 @@ const Login = () => {
     setError(null);
 
     // Perform login request
-    fetch('https://localhost3000/login', {
+    fetch('https://ms-daily.onrender.com//login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
@@ -32,7 +32,7 @@ const Login = () => {
     })
       .then((response) => {
         setIsLoading(false);
-        navigate("/newsFeed")
+        navigate("/sideNavbarAdmin")
         
 
         if (!response.ok) {
