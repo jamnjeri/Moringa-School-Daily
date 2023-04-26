@@ -5,7 +5,7 @@ import articleImageOne from "../assets/article-image-one.png"
 import articleImageTwo from "../assets/article-image-two.png"
 import avatarImageOne from "../assets/avatar-feed-one.png"
 import avatarImageTwo from "../assets/avatar-feed-two.png"
-import Navbar from "./navbar"
+
 
 function NewsFeed() {
   const [articles, setArticles] = useState([])
@@ -33,7 +33,6 @@ function NewsFeed() {
 
   return (
     <div>
-      <Navbar/>
     <main className="min-h-screen p-4 lg:p-0 grid grid-cols-1 gap-6 lg:grid-cols-[120px,auto]">
    
       <nav className="flex flex-col">
