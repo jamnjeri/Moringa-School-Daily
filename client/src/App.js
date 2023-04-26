@@ -9,7 +9,7 @@ import UserList from "./components/admin/userList";
 import AdminLogin from "./components/admin/adminLogin";
 import ModeratorLogin from "./components/moderator/moderatorLogin";
 import RoleLogin from "./components/roleLogin";
-import NewsFeed from "./components/newsFeed";
+import NewsFeed from "./components/newsFeed"
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/adminLogin" element={<AdminLogin />}></Route>
         <Route path="/moderatorLogin" element={<ModeratorLogin />}></Route>
         <Route path="/roleLogin" element={<RoleLogin />}></Route>
-        <Route path="/feed" element={<NewsFeed />}></Route>
+        <Route path="/newsFeed" element={<NewsFeed />}></Route>
 
         
       </Routes>

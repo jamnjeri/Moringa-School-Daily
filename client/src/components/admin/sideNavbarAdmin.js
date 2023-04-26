@@ -1,6 +1,7 @@
 import React from "react";
 import Articles from "../articlesCard";
 import { Link } from "react-router-dom";
+import Navbar from "../navbar";
 
 const SideNavbarAdmin = () => {
 
@@ -8,6 +9,7 @@ const SideNavbarAdmin = () => {
 
     return (
         <div>
+            <Navbar/>
             <div className="flex">
                 <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-60">
                     <div className="space-y-3">

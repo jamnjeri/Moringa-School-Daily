@@ -32,7 +32,7 @@ const Login = () => {
     })
       .then((response) => {
         setIsLoading(false);
-        navigate("/sideNavbarAdmin")
+        navigate("/newsFeed")
         
 
         if (!response.ok) {

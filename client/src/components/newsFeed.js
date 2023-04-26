@@ -1,15 +1,41 @@
+import React, { useState, useEffect } from "react"
 import avatar from "../assets/avatar.png"
 import logo from "../assets/logo2.svg"
 import articleImageOne from "../assets/article-image-one.png"
 import articleImageTwo from "../assets/article-image-two.png"
 import avatarImageOne from "../assets/avatar-feed-one.png"
 import avatarImageTwo from "../assets/avatar-feed-two.png"
+import Navbar from "./navbar"
 
 function NewsFeed() {
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    fetch("https://ms-daily.onrender.com/articles")
+      .then(response => response.json())
+      .then(data => {
+        const articles = data.articles.map(article => {
+          return {
+            title: article.title,
+            body: article.body,
+            likes: article.likes,
+            dislikes: article.dislikes,
+            user_ID: article.user_ID
+          };
+        });
+        setArticles(articles);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
 
   return (
+    <div>
+      <Navbar/>
     <main className="min-h-screen p-4 lg:p-0 grid grid-cols-1 gap-6 lg:grid-cols-[120px,auto]">
-      {/* Navbar */}
+   
       <nav className="flex flex-col">
         <div className="lg:hidden flex justify-between items-center">
           <img src={logo} alt="logo main" className="w-32" />
@@ -35,11 +61,26 @@ function NewsFeed() {
             </div>
             <img src={logo} alt="logo" />
           </header>
+
+{/* current article */}
           <article className="flex flex-col max-w-6xl mx-auto mt-10 lg:h-3/4 justify-around pr-2 gap-8 lg:gap-0">
             <section className="flex card gap-8">
               <div className="flex flex-col gap-2">
                 <div className="card-header flex gap-2">
                   <img src={avatarImageOne} />
+
+                  <div>
+                    {articles.map(article => (
+                      <div key={article.title}>
+                        <h2>{article.title}</h2>
+                        <p>{article.body}</p>
+                        <p>Likes: {article.likes}</p>
+                        <p>Dislikes: {article.dislikes}</p>
+                        <p>User ID: {article.user_ID}</p>
+                      </div>
+                    ))}
+                  </div>
+
                   <p>Amit Das</p>
                   <p>4 days ago</p>
                 </div>
@@ -60,6 +101,7 @@ function NewsFeed() {
                   </div>
                 </div>
               </div>
+              
               <img className="card-img object-cover rounded-md" src={articleImageOne} />
             </section>
             <section className="flex card gap-8">
@@ -89,6 +131,8 @@ function NewsFeed() {
               <img className="card-img object-cover rounded-md" src={articleImageTwo} />
             </section>
           </article>
+
+
         </section>
         {/* Recommendations */}
         <section className="flex flex-col pt-20 flex-grow px-4 items-center border-l-2 border-[#E6E6E6]">
@@ -133,6 +177,7 @@ function NewsFeed() {
         </section>
       </article>
     </main>
+    </div>
   )
 }
 
