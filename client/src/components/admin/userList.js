@@ -4,20 +4,21 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { TrashIcon } from '@heroicons/react/solid';
 
 function UserList() {
+
     const [users, setUsers] = useState([]);
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
 
     useEffect(() => {
-        fetch('/api/users')
+        fetch(' http://127.0.0.1:3000/users')
             .then(res => res.json())
             .then(data => setUsers(data))
             .catch(err => console.error(err));
     }, []);
 
     const handleDelete = (userId) => {
-        fetch(`/api/users/${userId}`, {
-            method: 'DELETE'
+        fetch(`http://127.0.0.1:3000/${userId}`, {
+            method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => {
@@ -30,8 +31,7 @@ function UserList() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        fetch('/api/users', {
+        fetch(' http://127.0.0.1:3000/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,6 +41,7 @@ function UserList() {
                 role
             })
         })
+
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -49,9 +50,9 @@ function UserList() {
                     setRole('');
                 }
             })
+            
             .catch(err => console.error(err));
     };
-
     return (
         <section class="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
         <div>
@@ -67,7 +68,7 @@ function UserList() {
                 <Tbody>
                     {users.map(user => (
                         <Tr key={user.id}>
-                            <Td>{user.name}</Td>
+                            <Td>{user.username}</Td>
                             <Td>{user.id}</Td>
                             <Td>{user.role}</Td>
                             <Td>
@@ -79,7 +80,6 @@ function UserList() {
                     ))}
                 </Tbody>
             </Table>
-            
                 <div class="container h-full p-10">
                     <div
                         class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
@@ -127,10 +127,8 @@ function UserList() {
                         </div>
                     </div>
                 </div>
-          
         </div>
         </section>
     );
 }
-
 export default UserList;

@@ -1,6 +1,9 @@
 import React from "react";
 import Articles from "../articlesCard";
 import { Link } from "react-router-dom";
+import CreateCategories from "./createCategories";
+import NewsFeed from "../newsFeed";
+import UserList from "./userList";
 
 
 const SideNavbarAdmin = () => {
@@ -11,7 +14,7 @@ const SideNavbarAdmin = () => {
         <div>
         
             <div className="flex">
-                <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-60">
+                <div className="h-screen p-3 bg-gray-800 shadow w-60">
                     <div className="space-y-3">
                         <div className="flex items-center">
                             <h2 className="text-xl font-bold text-white">Admin Dashboard</h2>
@@ -186,7 +189,7 @@ const SideNavbarAdmin = () => {
                         </div>
                     </div>
                 </div>
-                
+                <CreateCategories/>
             </div>
 
             <div>

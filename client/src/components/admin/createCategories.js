@@ -1,13 +1,16 @@
 import React from "react";
 
 
+
 const CreateCategories = () => {
 
     return (
-        <section class="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
-            <div class="container h-full p-10">
+       
+        <section class="gradient-form  bg-neutral-200 ">
+            
+            <div class=" h-full p-10">
                 <div
-                    class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+                    class=" flex w-auto  items-center justify-center text-neutral-800 dark:text-neutral-200">
                     <div class="w-auto">
                         <div
                             class="block rounded-3xl"
@@ -89,6 +92,7 @@ const CreateCategories = () => {
                 </div>
             </div>
         </section>
+        
     )
 }
 

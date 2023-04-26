@@ -23,7 +23,7 @@ const Login = () => {
     setError(null);
 
     // Perform login request
-    fetch('https://ms-daily.onrender.com/login', {
+    fetch('https://localhost3000/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
