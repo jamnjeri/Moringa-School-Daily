@@ -2,6 +2,7 @@ class Article < ApplicationRecord
   # Relationships
   belongs_to :user
   has_many :comments
+  has_many :notifications
   has_many :article_categories, dependent: :destroy
   has_many :categories, through: :article_categories
 
@@ -24,5 +25,7 @@ class Article < ApplicationRecord
   def dislikes
     self[:dislikes] || 0
   end
+
+  scope :new_articles_for_category, ->(category_id) { where(category_id: category_id, created_at: Time.current - 1.day..Time.current) }
 
 end

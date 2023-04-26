@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :notifications
+  resources :wishlists
   # SUBSCRIPTIONS
   resources :subscriptions ,only: [:create, :index, :destroy]
   
@@ -27,6 +29,10 @@ Rails.application.routes.draw do
 
   # ARTICLES
   resources :articles
+
+  resources :wishlists, only: [:create, :destroy]
+  post 'wishlist/add_article/:id', to: 'wishlist#add_article', as: 'wishlist_add_article'
+  delete 'wishlist/remove_article/:id', to: 'wishlist#remove_article', as: 'wishlist_remove_article'
 
   # Likes
   patch "/articles/:id/likes", to: "articles#like"
