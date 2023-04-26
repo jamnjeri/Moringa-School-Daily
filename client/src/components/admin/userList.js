@@ -80,17 +80,17 @@ function UserList() {
                 </Tbody>
             </Table>
             
-                <div class="container h-full p-10">
+                <div className="container h-full p-10">
                     <div
-                        class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
-                        <div class="w-auto">
+                        className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+                        <div className="w-auto">
                             <div
-                                class="block rounded-3xl"
+                                className="block rounded-3xl"
                                 style={{
                                     background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
                                 }}>
-                                <div class="g-0 lg:flex lg:flex-wrap">
-                                    <div class="md:mx-6 md:p-12">
+                                <div className="g-0 lg:flex lg:flex-wrap">
+                                    <div className="md:mx-6 md:p-12">
                                         <form onSubmit={handleSubmit}>
                                             <div className="my-4">
                                                 <label className="relative mb-4"

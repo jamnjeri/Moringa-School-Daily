@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default function Articles() {
     return (
@@ -65,6 +67,9 @@ export default function Articles() {
                     </div>
                 </div>
             </div>
+            <button className="text-center py-2 px-4 border border-transparent rounded-md text-white bg-orange-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4 mb-4">
+                    <NavLink to="/addArticle" >+ Article</NavLink> 
+            </button>
         </div>
     );
 }

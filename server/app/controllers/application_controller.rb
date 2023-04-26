@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     include ActionController::Cookies
 
     # make available
-    helper_method :current_user, :ensure_current_user, :image_url
+    helper_method :current_user, :ensure_current_user
 
     private
 
@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def image_url
-        Rails.application.routes.url_helpers.url_for(image) if image.attached?
-    end
+    # def image_url
+    #     Rails.application.routes.url_helpers.url_for(image) if image.attached?
+    # end
 
 end
