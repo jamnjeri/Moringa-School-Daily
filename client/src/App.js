@@ -10,6 +10,7 @@ import AdminLogin from "./components/admin/adminLogin";
 import ModeratorLogin from "./components/moderator/moderatorLogin";
 import RoleLogin from "./components/roleLogin";
 import NewsFeed from "./components/newsFeed";
+import ProfilePage from "./components/profilePage";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path="/moderatorLogin" element={<ModeratorLogin />}></Route>
         <Route path="/roleLogin" element={<RoleLogin />}></Route>
         <Route path="/feed" element={<NewsFeed />}></Route>
+        <Route path="/profile" element={<ProfilePage />}></Route>
+
 
         
       </Routes>
