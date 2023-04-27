@@ -8,8 +8,9 @@ import LandingPage from "./components/landingPage";
 import UserList from "./components/admin/userList";
 import AdminLogin from "./components/admin/adminLogin";
 import ModeratorLogin from "./components/moderator/moderatorLogin";
-import RoleLogin from "./components/roleLogin";
 import NewsFeed from "./components/newsFeed"
+import ArticleList from "./components/articleList";
+import AddArticles from "./components/addArticles";
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
         <Route path="/userList" element={<UserList />}></Route>
         <Route path="/adminLogin" element={<AdminLogin />}></Route>
         <Route path="/moderatorLogin" element={<ModeratorLogin />}></Route>
-        <Route path="/roleLogin" element={<RoleLogin />}></Route>
         <Route path="/newsFeed" element={<NewsFeed />}></Route>
-
+        <Route path="/articleList" element={<ArticleList />}></Route>
+        <Route path="/addArticles" element={<AddArticles />}></Route>
         
       </Routes>
     </BrowserRouter>

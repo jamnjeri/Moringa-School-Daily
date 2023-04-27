@@ -23,7 +23,7 @@ const LandingPage = () => {
             <Link to="/login"> Home</Link>
           </li>
           <li className='p-4'>
-            <Link to="/roleLogin"> Login</Link>
+            <Link to="/login"> Login</Link>
           </li>
           <li className='p-4'>
             <Link to='/signup'>Register</Link>

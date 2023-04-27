@@ -1,20 +1,13 @@
 import React from "react";
 import Articles from "../articlesCard";
 import { Link } from "react-router-dom";
-import CreateCategories from "./createCategories";
-import NewsFeed from "../newsFeed";
-import UserList from "./userList";
-
 
 const SideNavbarAdmin = () => {
 
-    
-
     return (
         <div>
-        
             <div className="flex">
-                <div className="h-screen p-3 bg-gray-800 shadow w-60">
+                <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-60">
                     <div className="space-y-3">
                         <div className="flex items-center">
                             <h2 className="text-xl font-bold text-white">Admin Dashboard</h2>
@@ -162,34 +155,56 @@ const SideNavbarAdmin = () => {
                                         <span className="text-gray-100">Profile</span>
                                     </a>
                                 </li>
-
-                                <li className="rounded-sm">
-                                    <a
-                                        href="#"
-                                        className="flex items-center p-2 space-x-3 rounded-md"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6 text-gray-100"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                                            />
-                                        </svg>
-                                        <span className="text-gray-100">Logout</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <CreateCategories/>
+                <div className="container mx-4 mt-4 bg-neutral-200 dark:bg-neutral-700">
+                    <div className="grid grid-cols-1 gap-3 mb-3 lg:grid-cols-3"
+                    >
+                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow"
+                        >
+                            <div className="text-sm font-medium text-gray-500 truncate"
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
+                                Published Articles
+                            </div>
+                            <div className="mt-1 text-3xl font-semibold text-gray-900">
+                                <Link to="/">
+                                    Published
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+                            <div className="text-sm font-medium text-gray-500 truncate"
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
+                                New Articles
+                            </div>
+                            <div className="mt-1 text-3xl font-semibold text-gray-900">
+                                <Link>
+                                    Pending Articles
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+                            <div className="text-sm font-medium text-gray-500 truncate"
+                                style={{
+                                    background: 'linear-gradient(to top, #101F3C, white, white, white, white, white)'
+                                }}>
+                                Rejected Articles
+                            </div>
+                            <div className="mt-1 text-3xl font-semibold text-gray-900">
+                                <Link>
+                                    Rejected
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <Articles />
+                </div>
             </div>
 
             <div>
