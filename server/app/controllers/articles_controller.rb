@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
     # Handle ActiveRecord Unprocessable Entity - raised when a record fails to save or validate in the database.
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-    before_action :ensure_current_user, only: [:create, :update, :destroy, :like, :dislike]
 
     # GET /articles
     def index
@@ -21,6 +20,7 @@ class ArticlesController < ApplicationController
 
     # POST /articles (If logged in)
     def create
+        current_user = User.find_by(session[:user_id])
         if current_user
             article = current_user.articles.new(article_params)
             if article.save
@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
     # PATCH /articles/:id  (If logged in)
     def update
         article = find_article
+        current_user = User.find_by(session[:user_id])
         if current_user && (current_user == article.user || current_user.role == "admin")
             if article.update(article_params)
                 render json: article, status: :accepted
@@ -50,6 +51,7 @@ class ArticlesController < ApplicationController
 
     # DELETE /articles/:id (Article owner or admin)
     def destroy
+        current_user = User.find_by(id: session[:user_id])
         article = find_article
         if current_user && (current_user == article.user || current_user.role == "admin")
             article.destroy
@@ -61,6 +63,7 @@ class ArticlesController < ApplicationController
 
     # Like
     def like
+        current_user = User.find_by(id: session[:user_id])
         article = find_article
         if current_user
             article.likes += 1
@@ -76,6 +79,7 @@ class ArticlesController < ApplicationController
 
     # Dislike
     def dislike
+        current_user = User.find_by(id: session[:user_id])
         article = find_article
         if current_user
             article.dislikes += 1
@@ -96,7 +100,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :body, :image)
+        params.require(:article).permit(:title, :body, :user_id, :image)
     end
 
     def render_not_found_response

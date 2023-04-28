@@ -1,5 +1,5 @@
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :likes, :dislikes, :status, :image_url, :user_id
+  include JSONAPI::Serializer
+  attributes :id, :title, :body, :likes, :dislikes, :status, :user_id, :image_url
 
-  belongs_to :user, serializer: UserSerializer
 end
