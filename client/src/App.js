@@ -10,6 +10,7 @@ import PrivateRoutes from "./utils/PrivateRoutes";
 import ModeDashboard from "./pages/ModeDashboard";
 import TwDashboard from "./pages/TwDashboard";
 import ResetPassword from "./pages/Reset";
+import ArticleCard from "./components/ArticleCard";
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboards user={user} handleLogout={handleLogout} />}></Route>
           <Route path="/modedashboard" element={<ModeDashboard user={user} handleLogout={handleLogout} />}></Route>
           <Route path="/twdashboard" element={<TwDashboard user={user} handleLogout={handleLogout} />}></Route>
+          <Route path="/article/:id" element={<ArticleCard user={user} />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

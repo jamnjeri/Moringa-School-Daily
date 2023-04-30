@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
+
 
 function Feed() {
   const [articles, setArticles] = useState([]);
@@ -23,7 +24,7 @@ function Feed() {
         <div key={article.id} className="row gx-5">
           <div className="col-md-6 mb-4">
             <div className="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-              <img src={article.image} className="img-fluid" />
+              <img src={article.image_url} className="img-fluid" />
               <Link to={`/article/${article.id}`}>
                 <div className="mask"
                   style={{
@@ -37,13 +38,16 @@ function Feed() {
             <span className="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
             <h4><strong>{article.title}</strong></h4>
             <p className="text-muted">{article.user_id}</p>
-            <p className="text-muted">{article.likes} likes</p>
+            <p className="text-muted">{article.likes} </p>
          
-            <Link to={`/article/${article.id}`} className="btn btn-primary">Read more</Link>
+            <Link to={`/article/${article.id}`} className="btn btn-primary">
+  Read more
+</Link>
           </div>
         </div>
       ))}
-    </div>
+
+          </div>
   );
 }
 
