@@ -1,6 +1,7 @@
 import React from 'react'
+import Feed from './Feed'
 
-function ArticleCard() {
+function ArticleCard({}) {
   return (
     <div>ArticleCard</div>
   )

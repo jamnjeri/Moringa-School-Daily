@@ -10,7 +10,7 @@ import Feed from '../components/Feed';
 import Articles from '../components/Articles';
 import Users from '../components/Users';
 
-function Dashboards({ user, handleLogout }) {
+function ModeDashboard ({ user, handleLogout }) {
 
     const [open, setOpen] = useState(true)
     const [activeDashboard, setActiveDashboard] = useState('feed');
@@ -66,12 +66,7 @@ function Dashboards({ user, handleLogout }) {
                     <img src={Book}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Articles</span>
                 </li>
-                <li className={`${activeDashboard === 'users' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
-                    onClick={() => handleClick('users')}
-                >
-                    <img src={Person}/>
-                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Users</span>
-                </li>
+                
                 {/* Logout & Profile */}
                 <li className={`${activeDashboard === 'logout' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
                     onClick={() => handleSignout()}
@@ -98,4 +93,4 @@ function Dashboards({ user, handleLogout }) {
   )
 }
 
-export default Dashboards
+export default ModeDashboard
