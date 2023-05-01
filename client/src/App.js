@@ -32,14 +32,6 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("user");
-  //   if (loggedInUser) {
-  //     const foundUser = JSON.parse(loggedInUser);
-  //     setUser(foundUser);
-  //   }
-  // }, []);
-
 
   const handleLogin = (user) => {
     setIsLoggedIn(true);

@@ -5,10 +5,13 @@ import Book from '../assets/Folder.png'
 import Person from '../assets/User.png'
 import Home from '../assets/Home.png'
 import Logout from '../assets/Logout.png'
-import Profile from '../assets/Profile.png'
+import Profiles from '../assets/Profile.png'
+import Category from '../assets/Category.png'
 import Feed from '../components/Feed';
 import Articles from '../components/Articles';
 import Users from '../components/Users';
+import Categories from '../components/Categories';
+import Profile from '../components/Profile';
 
 function Dashboards({ user, handleLogout }) {
 
@@ -18,6 +21,8 @@ function Dashboards({ user, handleLogout }) {
     function handleClick(dashboard){
         setActiveDashboard(dashboard);
     }
+
+    // console.log(user)
 
     function handleSignout(){
         // Logout
@@ -38,7 +43,7 @@ function Dashboards({ user, handleLogout }) {
 
 
   return (
-    <div className='flex'>
+    <div className='flex '>
         <div className={`${open ? "w-72" : "w-20"} duration-300 h-screen p-5 pt-8 bg-[#101f3c] relative `}>
             <img
                 src={Control}
@@ -66,12 +71,20 @@ function Dashboards({ user, handleLogout }) {
                     <img src={Book}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Articles</span>
                 </li>
-                <li className={`${activeDashboard === 'users' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
-                    onClick={() => handleClick('users')}
+                <li className={`${activeDashboard === 'articles' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                    onClick={() => handleClick('categories')}
                 >
-                    <img src={Person}/>
-                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Users</span>
+                    <img src={Category} className="w-6 h-6" />
+                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Categories</span>
                 </li>
+                {user.role === 'admin' &&
+                    <li className={`${activeDashboard === 'users' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                        onClick={() => handleClick('users')}
+                    >
+                        <img src={Person}/>
+                        <span className={`${!open && 'hidden'} origin-left duration-200`}>Users</span>
+                    </li>
+                }
                 {/* Logout & Profile */}
                 <li className={`${activeDashboard === 'logout' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
                     onClick={() => handleSignout()}
@@ -80,18 +93,20 @@ function Dashboards({ user, handleLogout }) {
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Logout</span>
                 </li>
                 <li className={`${activeDashboard === 'profile' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
-                    onClick={() => handleClick('users')}
+                    onClick={() => handleClick('profile')}
                 >
-                    <img src={Profile}/>
+                    <img src={Profiles}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Profile</span>
                 </li>
             </ul>
         </div>
         <div className='p-7 text-2xl flex-1 h-screen'>
-            <h1 className='pb-12'>Dashboard</h1>
-            {activeDashboard === 'feed' && <Feed />}
-            {activeDashboard === 'articles' && <Articles />}
+            {/* <h1 className='pb-4'>Dashboard</h1> */}
+            {activeDashboard === 'feed' && <Feed user={user} />}
+            {activeDashboard === 'articles' && <Articles user={user}/>}
             {activeDashboard === 'users' && <Users />}
+            {activeDashboard === 'categories' && <Categories user={user} />}
+            {activeDashboard === 'profile' && <Profile user={user} />}
         </div>
     </div>
   )

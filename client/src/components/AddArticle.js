@@ -3,6 +3,8 @@ import { useNavigate, NavLink } from 'react-router-dom';
 
 function AddArticle({ loggedInUser, setOpen, open}) {
 
+    console.log(loggedInUser.id);
+
     const navigate = useNavigate();
 
     const [article, setArticle] = useState(null);
