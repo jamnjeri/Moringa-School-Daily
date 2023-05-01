@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :notifications
   resources :wishlists
+
   # SUBSCRIPTIONS
   resources :subscriptions ,only: [:create, :index, :destroy]
   
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
   # stay logged in
-  get "/me", to: "users#show"
+  get "/me", to: "users#me"
 
   # SESSIONS
   post "/login", to: "sessions#create"

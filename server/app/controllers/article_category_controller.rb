@@ -16,6 +16,7 @@ class ArticleCategoryController < ApplicationController
         end
 
         private
+        
         def article_category_params
             params.permit(:article_id, :user_id)
             
