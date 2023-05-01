@@ -19,12 +19,15 @@ function Feed() {
   }, []);
 
   return (
-    <div className="flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row">
+    <div className="container mx-3 mt-4 w-full max-[1240px]">
+    <div className="grid grid-cols-1 gap-3 px-4 mb-3 lg:grid-cols-3 drop-shadow-lg">
       {articles.map((article) => (
         <div key={article.id} className="row gx-5">
           <div className="col-md-6 mb-4">
             <div className="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-              <img src={article.image_url} className="img-fluid" />
+            <div className="card w-96 object-cover rounded-lg bg-base-100 shadow-xl">
+              <img src={article.image_url} className="img-fluid rounded-lg" />
+              </div>
               <Link to={`/article/${article.id}`}>
                 <div className="mask"
                   style={{
@@ -36,9 +39,9 @@ function Feed() {
 
           <div className="col-md-6 mb-4">
             <span className="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
-            <h4><strong>{article.title}</strong></h4>
-            <p className="text-muted">{article.user_id}</p>
-            <p className="text-muted">{article.likes} </p>
+            <h5><strong>{article.title}</strong></h5>
+            <p className="text-muted">Added by: {article.user_id}</p>
+            <p className="text-muted">{article.likes} Likes</p>
          
             <Link to={`/article/${article.id}`} className="btn btn-primary">
   Read more
@@ -47,6 +50,7 @@ function Feed() {
         </div>
       ))}
 
+          </div>
           </div>
   );
 }

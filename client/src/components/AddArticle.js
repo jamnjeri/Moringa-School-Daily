@@ -33,12 +33,12 @@ function AddArticle({ loggedInUser, setOpen, open}) {
 
   return (
     <div>
-        <div >
+        <div className='bg-[#101f3c] w-full rounded-lg'>
             <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col w-full max-w-md mx-auto bg-white p-6 rounded-md shadow-md'>
-                <h2 className="text-2xl font-bold mb-6">Create an Article</h2>
+                <h2 className="text-xl font-bold mb-6">Create an Article</h2>
                 {/* Title */}
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="title">Title</label>
+                    <label className="block text-gray-700 font-normal mb-2" htmlFor="title">Title</label>
                     <input 
                         type="text" 
                         name="title" 
@@ -51,7 +51,7 @@ function AddArticle({ loggedInUser, setOpen, open}) {
 
                 {/* Body */}
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="body">Body</label>
+                    <label className="block text-gray-700 font-normal mb-2" htmlFor="body">Body</label>
                     <textarea
                         className="w-full px-3 py-2 rounded-md border border-gray-400 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="body"
@@ -63,7 +63,7 @@ function AddArticle({ loggedInUser, setOpen, open}) {
 
                 {/* Image */}
                 <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="file">Upload a Image</label>
+                    <label className="block text-gray-700 font-normal mb-2 w-full" htmlFor="file">Upload an Image</label>
                     <input 
                         type="file" 
                         name="image" 

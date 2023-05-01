@@ -39,7 +39,7 @@ function ModeDashboard ({ user, handleLogout }) {
 
   return (
     <div className='flex'>
-        <div className={`${open ? "w-72" : "w-20"} duration-300 h-screen p-5 pt-8 bg-[#101f3c] relative `}>
+        <div className={`${open ? "w-72" : "w-20"} duration-300 rounded-lg p-5 pt-8 bg-[#101f3c] relative `}>
             <img
                 src={Control}
                 className={`absolute cursor-pointer rounded-full -right-3 top-9 w-7 border-2 border-[#101f3c] ${!open && 'rotate-180'}`}
@@ -66,20 +66,29 @@ function ModeDashboard ({ user, handleLogout }) {
                     <img src={Book}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Articles</span>
                 </li>
+
+                <li className={`${activeDashboard === 'categories' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                    onClick={() => handleClick('categories')}
+                >
+                    <img src={Person}/>
+                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Categories</span>
+                </li>
                 
                 {/* Logout & Profile */}
-                <li className={`${activeDashboard === 'logout' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
-                    onClick={() => handleSignout()}
-                >
-                    <img src={Logout}/>
-                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Logout</span>
-                </li>
                 <li className={`${activeDashboard === 'profile' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
                     onClick={() => handleClick('users')}
                 >
                     <img src={Profile}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Profile</span>
                 </li>
+
+                <li className={`${activeDashboard === 'logout' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                    onClick={() => handleSignout()}
+                >
+                    <img src={Logout}/>
+                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Logout</span>
+                </li>
+               
             </ul>
         </div>
         <div className='p-7 text-2xl flex-1 h-screen'>

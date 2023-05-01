@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboards from "./pages/Dashboards";
-
+import Categories from "./components/Categories";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import ModeDashboard from "./pages/ModeDashboard";
 import TwDashboard from "./pages/TwDashboard";
@@ -73,6 +73,7 @@ function App() {
           <Route path="/modedashboard" element={<ModeDashboard user={user} handleLogout={handleLogout} />}></Route>
           <Route path="/twdashboard" element={<TwDashboard user={user} handleLogout={handleLogout} />}></Route>
           <Route path="/article/:id" element={<ArticleCard user={user} />}></Route>
+          <Route path="/categories" element={<Categories user={user} />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
