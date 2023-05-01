@@ -11,6 +11,8 @@ import ModeDashboard from "./pages/ModeDashboard";
 import TwDashboard from "./pages/TwDashboard";
 import ResetPassword from "./pages/Reset";
 import ArticleCard from "./components/ArticleCard";
+import Profile from "./components/Profile";
+import AddCategories from "./components/AddCategories";
 
 function App() {
 
@@ -27,7 +29,7 @@ function App() {
 
   useEffect(() => {
     // auto-login user
-    fetch("http://localhost:3000/me")
+    fetch("http://localhost:3000/signup")
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the response data
@@ -74,6 +76,8 @@ function App() {
           <Route path="/twdashboard" element={<TwDashboard user={user} handleLogout={handleLogout} />}></Route>
           <Route path="/article/:id" element={<ArticleCard user={user} />}></Route>
           <Route path="/categories" element={<Categories user={user} />}></Route>
+          <Route path="/profile" element={<Profile user={user} />}></Route>
+          <Route path="/addCategories" element={<AddCategories user={user} />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

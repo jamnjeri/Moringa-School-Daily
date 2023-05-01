@@ -4,10 +4,13 @@ import Logo from '../assets/logo.png';
 import Book from '../assets/Folder.png'
 import Home from '../assets/Home.png'
 import Logout from '../assets/Logout.png'
-import Profile from '../assets/Profile.png'
+import ProfileImage from '../assets/Profile.png'
+import Person from '../assets/User.png'
 import Feed from '../components/Feed';
 import Articles from '../components/Articles';
 import Users from '../components/Users';
+import Profile from '../components/Profile';
+import Categories from '../components/Categories';
 
 function TwDashboard ({ user, handleLogout }) {
 
@@ -65,27 +68,39 @@ function TwDashboard ({ user, handleLogout }) {
                     <img src={Book}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Articles</span>
                 </li>
+
+                <li className={`${activeDashboard === 'categories' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                    onClick={() => handleClick('categories')}
+                >
+                    <img src={Person}/>
+                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Categories</span>
+                </li>
                 
                 {/* Logout & Profile */}
+                
+                <li className={`${activeDashboard === 'profile' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
+                    onClick={() => handleClick('profile')}
+                >
+                    <img src={ProfileImage}/>
+                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Profile</span>
+                </li>
+
                 <li className={`${activeDashboard === 'logout' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
                     onClick={() => handleSignout()}
                 >
                     <img src={Logout}/>
                     <span className={`${!open && 'hidden'} origin-left duration-200`}>Logout</span>
                 </li>
-                <li className={`${activeDashboard === 'profile' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
-                    onClick={() => handleClick('users')}
-                >
-                    <img src={Profile}/>
-                    <span className={`${!open && 'hidden'} origin-left duration-200`}>Profile</span>
-                </li>
-            </ul>
+
+                </ul>
         </div>
         <div className='p-7 text-2xl flex-1 h-screen'>
             <h1 className='pb-12'>Dashboard</h1>
             {activeDashboard === 'feed' && <Feed />}
             {activeDashboard === 'articles' && <Articles />}
             {activeDashboard === 'users' && <Users />}
+            {activeDashboard === 'categories' && <Categories />}
+            {activeDashboard === 'profile' && <Profile />}
             
         </div>
     </div>

@@ -7,7 +7,7 @@ function ArticleCard(article) {
   useEffect(() => {
     async function fetchArticleData() {
       try {
-        const response = await fetch(`http://localhost:3000/article/${article.id}`);
+        const response = await fetch(`http://localhost:3000/articles/${article.id}`);
         const data = await response.json();
         setArticleData(data);
       } catch (error) {
@@ -27,6 +27,7 @@ function ArticleCard(article) {
       <div className="card-body">
         <h5 className="card-title">{articleData.title}</h5>
         <p className="card-text">{articleData.body}</p>
+        
         <p className="card-text"><small className="text-muted">{articleData.user_id}</small></p>
         <p className="card-text"><small className="text-muted">{articleData.likes} likes</small></p>
         

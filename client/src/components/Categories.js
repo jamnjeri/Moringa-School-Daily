@@ -17,16 +17,16 @@ function Categories() {
   }, []);
 
   return (
-    <div>
+    <card className="h-screen grid-cols-4 col-span-5">
       {categories.map((category) => (
-        <div className="card" key={categories.id}>
+        <div className="card" key={category.id}>
           <div className="card-body">
-            <h5 className="card-title">{categories.name}</h5>
-            <p className="card-text">{categories.description}</p>
+            <h5 className="card-title">{category.name}</h5>
+            <p className="card-text">{category.description}</p>
           </div>
         </div>
       ))}
-    </div>
+    </card>
   );
 }
 

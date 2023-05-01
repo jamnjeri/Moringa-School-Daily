@@ -4,6 +4,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 
 function Feed() {
   const [articles, setArticles] = useState([]);
+  
 
   useEffect(() => {
     async function fetchArticles() {
@@ -40,13 +41,14 @@ function Feed() {
           <div className="col-md-6 mb-4">
             <span className="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
             <h5><strong>{article.title}</strong></h5>
-            <p className="text-muted">Added by: {article.user_id}</p>
+            {/* <p className="text-muted">Added by: {article.user_id}</p> */}
             <p className="text-muted">{article.likes} Likes</p>
          
-            <Link to={`/article/${article.id}`} className="btn btn-primary">
+            <Link to={`/articles/${article.id}`} className="btn btn-primary">
   Read more
 </Link>
           </div>
+        {console.log(articles.user_id)}
         </div>
       ))}
 
