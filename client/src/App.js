@@ -22,6 +22,12 @@ function App() {
     console.log(loggedIn)
     setUser(user)
   };
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    // handle successful logout
+    setUser(null); // set user state to null
+    sessionStorage.removeItem("user")
+  };
 
   return (
       <Routes>
@@ -29,7 +35,7 @@ function App() {
         <Route path="/login" element={ <Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup handleLogin={handleLogin} />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="/dashboard" element={<Dashboards />} />
+          <Route path="/dashboard" element={<Dashboards user={user} handleLogout={handleLogout} />} />
         </Route>
       </Routes>
   );
