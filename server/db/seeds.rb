@@ -51,4 +51,16 @@ cat9 = Category.create!(
   #   )
   # end
 
+# create a new user
+user = User.create(username: "maya_gr", email: "maya@mail.com", password: "password", role: 2)
+
+# create a new profile for the user
+profile = Profile.create(user: user, full_name: "Maya Griffin", bio: "Lorem ipsum dolor sit amet")
+
+# assign the profile to the user
+user.profile = profile
+
+# save the user
+# user.save
+
 

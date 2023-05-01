@@ -18,6 +18,9 @@ class User < ApplicationRecord
     # Helper method to encrypt password
     has_secure_password
 
+    # create default profile for user
+    after_create :create_default_profile
+
     # Validations
     validates :email, presence: true, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP} # checks if the email attribute of a model matches a valid email format
@@ -37,4 +40,9 @@ class User < ApplicationRecord
           UserMailer.new_article_notification(self, article).deliver_now
         end
     end
+
+    # def create_default_profile
+    #   profile = self.build_profile(full_name: "#{self.username}", bio: "Write something about yourself.")
+    #   profile.save!
+    # end
 end

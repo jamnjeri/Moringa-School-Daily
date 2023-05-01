@@ -35,7 +35,7 @@ function Signup({ handleLogin }) {
               response.json().then((data) => {
                 console.log(data)
                 handleLogin(data)
-                navigate("/dashboard");
+                navigate("/login");
               });
             } else {
               response.json().then((err) => setError(err.errors));

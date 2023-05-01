@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     // auto-login user
-    fetch("http://localhost:3000/me")
+    fetch("http://localhost:3000/signup")
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the response data
