@@ -47,8 +47,6 @@ function IndividualArticle({ selectedArticle, toggleContent, user, refresh, setR
             setError('Error updating the like');
         });
 
-        // Refresh
-        setRefresh(!refresh);
     }
 
     function addComment(){
@@ -72,8 +70,6 @@ function IndividualArticle({ selectedArticle, toggleContent, user, refresh, setR
             setError('Error updating the like');
         });
 
-        // Refresh
-        setRefresh(!refresh);
     }
 
     function handleShowComments(){

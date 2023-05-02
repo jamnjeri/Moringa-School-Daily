@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AddCategory from './AddCategory'
+import Subscriptions from './Subscriptions';
 
 
 function Categories({ user }) {
@@ -51,7 +52,11 @@ function Categories({ user }) {
                 )}
             </>
             ) : (
-            <AddCategory refresh={refresh} setRefresh={setRefresh} />
+              <div>
+                <AddCategory refresh={refresh} setRefresh={setRefresh} user={user} />
+              </div>
+            
+            
         )}
     </div>
   )

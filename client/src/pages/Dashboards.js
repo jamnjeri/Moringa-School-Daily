@@ -6,11 +6,12 @@ import Person from '../assets/User.png'
 import Home from '../assets/Home.png'
 import Logout from '../assets/Logout.png'
 import Profiles from '../assets/Profile.png'
-import Category from '../assets/Category.png'
+import Categ from '../assets/Category.png'
 import Feed from '../components/Feed';
 import Articles from '../components/Articles';
 import Users from '../components/Users';
 import Categories from '../components/Categories';
+import Category from '../components/Category';
 import Profile from '../components/Profile';
 
 function Dashboards({ user, handleLogout }) {
@@ -74,7 +75,7 @@ function Dashboards({ user, handleLogout }) {
                     <li className={`${activeDashboard === 'categories' ? 'bg-[rgba(255,255,255,0.17)]' : ""} pt-4 pb-4 text-white hover:text-[#F9500D] text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-[rgba(255,255,255,0.17)] rounded-md`} 
                         onClick={() => handleClick('categories')}
                     >
-                        <img src={Category} className="w-6 h-6" />
+                        <img src={Categ} className="w-6 h-6" />
                         <span className={`${!open && 'hidden'} origin-left duration-200`}>Categories</span>
                     </li>
                 }
@@ -107,6 +108,7 @@ function Dashboards({ user, handleLogout }) {
             {activeDashboard === 'articles' && <Articles user={user}/>}
             {activeDashboard === 'users' && <Users />}
             {activeDashboard === 'categories' && <Categories user={user} />}
+            {/* {activeDashboard === 'categories' && <Category user={user} />} */}
             {activeDashboard === 'profile' && <Profile user={user} />}
         </div>
     </div>

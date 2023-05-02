@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react'
 
-function AddCategory({ refresh, setRefresh }) {
+function AddCategory({ user }) {
 
     const [name, setName] = useState('');
-
     const [description, setDescription] = useState('');
 
     function handleSubmit(e){
         e.preventDefault();
 
         // POST NEW CATEGORY
-
-        // Refresh
-        setRefresh(!refresh);
+        fetch("http://localhost:3000/categories", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                description: description
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // handle the response data here
+            console.log(data)
+        })
+        .catch((error) => console.error(error))
     }
 
 
   return (
     <div>
-        <form className='flex flex-col w-full max-w-md mx-auto bg-white p-6 rounded-md shadow-md'>
+        <form onSubmit={handleSubmit} className='flex flex-col w-full max-w-md mx-auto bg-white p-6 rounded-md shadow-md'>
             <h2 className="text-2xl font-bold mb-6">Add a category</h2>
             {/* Name */}
             <div className="mb-4">
@@ -28,7 +40,7 @@ function AddCategory({ refresh, setRefresh }) {
                     name="name" 
                     id="name" 
                     value={name} 
-                    // onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="Enter Category Name" 
                     className="w-full px-3 py-2 rounded-md border border-gray-400 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required
@@ -43,7 +55,7 @@ function AddCategory({ refresh, setRefresh }) {
                     name="description" 
                     id="description" 
                     value={description} 
-                    // onChange={(e) => setDescription(e.target.value)}
+                    onChange={(e) => setDescription(e.target.value)}
                     placeholder="Enter Category Description" 
                     className="w-full px-3 py-2 rounded-md border border-gray-400 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required
