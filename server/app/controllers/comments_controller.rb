@@ -12,10 +12,11 @@ class CommentsController < ApplicationController
         render json: comments, status: :ok
     end
 
+    # Get comment that has a comment with the article_id params 
     # GET /:id
     def show
-        comment = find_comment
-        render json: comment, status: :ok
+        top_level_comments = Comment.where(article_id: params[:id], parent_id: nil).includes(:comments)
+        render json: top_level_comments.to_json(include: :comments)
     end
 
     # POST
@@ -45,7 +46,7 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-        params.permit(:content, :article_id, :user_id)
+        params.permit(:content,:parent_id, :article_id, :user_id)
     end
 
     def render_not_found_response

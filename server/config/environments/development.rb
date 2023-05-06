@@ -1,8 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 hosts = {
-  development: 'http://localhost:3000',
-  production: 'https://ms-daily.onrender.com'
+  development: 'http://localhost:3001',
+  production: '*'
 }.freeze
 
 # Rails.application.routes.default_url_options = {
